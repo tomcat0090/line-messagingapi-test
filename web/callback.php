@@ -18,7 +18,40 @@ if($type != "text"){
 }
 
 //返信データ作成
-if ($text == 'はい') {
+if ($text == 'カタログ') {{
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "こちらの商品はいかがですか？",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://www.ttrinity.jp/_img/product/7/7939/1434793/1514712/2499650/product_img_f_2499650.jpg",
+      "title" => "365連休",
+      "text" => "お探しのTシャツはこれですね",
+      "actions" => [
+          [
+            "type" => "postback",
+            "label" => "予約する",
+            "data" => "action=buy&itemid=123"
+          ],
+          [
+            "type" => "postback",
+            "label" => "電話する",
+            "data" => "action=pcall&itemid=123"
+          ],
+          [
+            "type" => "uri",
+            "label" => "詳しく見る",
+            "uri" => "https://www.ttrinity.jp/product/1514712"
+          ],
+          [
+            "type" => "message",
+            "label" => "違うやつ",
+            "text" => "違うやつお願い"
+          ]
+      ]
+    ]
+  ];
+} else if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "こちらの〇〇はいかがですか？",
@@ -61,8 +94,8 @@ if ($text == 'はい') {
       "type" => "carousel",
       "columns" => [
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
-            "title" => "●●レストラン",
+            "thumbnailImageUrl" => "https://www.ttrinity.jp/_img/product/23/23588/1498943/1720465/5211162/product_img_f_5211162.jpg",
+            "title" => "キリンビール",
             "text" => "こちらにしますか？",
             "actions" => [
               [
@@ -78,13 +111,13 @@ if ($text == 'はい') {
               [
                   "type" => "uri",
                   "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                  "uri" => "https://www.ttrinity.jp/product/1720465"
               ]
             ]
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
-            "title" => "▲▲レストラン",
+            "thumbnailImageUrl" => "https://www.ttrinity.jp/_img/product/20/20110/1465052/1614560/3715602/product_img_b_3715602.jpg",
+            "title" => "背中から入り込むネコ",
             "text" => "それともこちら？（２つ目）",
             "actions" => [
               [
@@ -100,13 +133,13 @@ if ($text == 'はい') {
               [
                   "type" => "uri",
                   "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                  "uri" => "https://www.ttrinity.jp/product/1614560?feature_id=5#158"
               ]
             ]
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
-            "title" => "■■レストラン",
+            "thumbnailImageUrl" => "https://www.ttrinity.jp/_img/product/15/15487/1406198/1487109/2115849/product_img_f_2115849.jpg",
+            "title" => "ちょっとバタバタしてまして",
             "text" => "はたまたこちら？（３つ目）",
             "actions" => [
               [
@@ -122,7 +155,7 @@ if ($text == 'はい') {
               [
                   "type" => "uri",
                   "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+                  "uri" => "https://www.ttrinity.jp/product/1487109"
               ]
             ]
           ]
