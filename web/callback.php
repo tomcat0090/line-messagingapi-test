@@ -18,7 +18,7 @@ if($type != "text"){
 }
 
 //返信データ作成
-if ($text == 'カタログ') {{
+if ($text == 'カタログ') {
   $response_format_text = [
     "type" => "template",
     "altText" => "こちらの商品はいかがですか？",
